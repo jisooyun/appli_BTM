@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic'])
+angular.module('starter', ['ionic', 'starter.controllers', 'ui.router', 'firebase'])
 
 .run(function($ionicPlatform) {
     $ionicPlatform.ready(function () {
@@ -32,10 +32,10 @@ angular.module('starter', ['ionic'])
     $stateProvider
 
     // setup an abstract state for the tabs directive
-        .state('tab', {
-            url: '/tab',
-            abstract: true,
+        .state('pre_home', {
+            url: '/pre_home',
             templateUrl: 'templates/prehome.html'
+            // controller : 'UserController'
         })
         .state('homepage', {
             url: '/homepage',
@@ -70,6 +70,14 @@ angular.module('starter', ['ionic'])
         .state('spec_produit', {
             url: '/spec_produit',
             templateUrl: 'templates/spec_produit.html'
+        })
+        .state('register', {
+          url: "/register",
+          templateUrl : 'templates/register.html'
+        })
+        .state('login',{
+          url: "/login",
+          templateUrl : 'templates/login.html'
         })
 
 

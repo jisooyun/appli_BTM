@@ -1,0 +1,19 @@
+<ion-view view-title="pre_home">
+
+    <ion-content scroll="false" >
+      <!-- ng-controller="UserController" -->
+
+        <section class="page_prehome">
+
+
+                <h1> titre </h1>
+
+
+            <a ui-sref="login"> déjà un compte ? </a>
+            <button ui-sref="register" > Inscription </button>
+            <button class="btn_connexionfb" ng-click="auth.$authWithOAuthPopup('facebook');showPopup()">Connexion Facebook</button>
+
+        </section>
+
+    </ion-content>
+</ion-view>
