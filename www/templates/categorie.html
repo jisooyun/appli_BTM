@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-</head>
+<html>
+
 <body>
-<div class="list">
+
+<ion-view title="Categorie">
+
+<label class="item item-input search">
+    <i class="icon icon-search placeholder-icon"></i>
+    <input type="search" placeholder="Rechercher des t-shirts, des goodies, etc.." ng-model="searchQuery" />
+</label>
+<div class="list | filter:searchQuery">
 
     <a class="item item-thumbnail-left" href="#">
         <img src="cover.jpg">
@@ -46,5 +50,8 @@
 </div>
 
 
+</ion-view>
+
 </body>
+
 </html>
