@@ -48,8 +48,8 @@ angular.module('starter', ['ionic'])
         })
 
         .state('edit_profil', {
-            url: '/profil',
-            templateUrl: 'templates/profil.html'
+            url: '/edit_profil',
+            templateUrl: 'templates/edit_profil.html'
         })
 
         .state('inscription', {
