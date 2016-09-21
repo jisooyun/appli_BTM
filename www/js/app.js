@@ -48,8 +48,8 @@ angular.module('starter', ['ionic'])
         })
 
         .state('edit_profil', {
-            url: '/profil',
-            templateUrl: 'templates/profil.html'
+            url: '/edit_profil',
+            templateUrl: 'templates/edit_profil.html'
         })
 
         .state('inscription', {
@@ -62,9 +62,9 @@ angular.module('starter', ['ionic'])
             templateUrl: 'templates/connexion.html'
         })
 
-        .state('categ_produit', {
-            url: '/categ_produit',
-            templateUrl: 'templates/categ_produit.html'
+        .state('categorie', {
+            url: '/categorie',
+            templateUrl: 'templates/categorie.html'
         })
 
         .state('spec_produit', {
