@@ -62,9 +62,9 @@ angular.module('starter', ['ionic'])
             templateUrl: 'templates/connexion.html'
         })
 
-        .state('categ_produit', {
-            url: '/categ_produit',
-            templateUrl: 'templates/categ_produit.html'
+        .state('categorie', {
+            url: '/categorie',
+            templateUrl: 'templates/categorie.html'
         })
 
         .state('spec_produit', {
