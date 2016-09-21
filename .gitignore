@@ -5,4 +5,7 @@ node_modules/
 platforms/
 plugins/
 
-.idea/
+.idea
+**/.idea/workspace.xml
+.idea/workspace.xml
+.platforms
