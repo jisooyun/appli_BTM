@@ -25,18 +25,55 @@ angular.module('starter', ['ionic'])
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
-  // Ionic uses AngularUI Router which uses the concept of states
-  // Learn more here: https://github.com/angular-ui/ui-router
-  // Set up the various states which the app can be in.
-  // Each state's controller can be found in controllers.js
-  $stateProvider
+    // Ionic uses AngularUI Router which uses the concept of states
+    // Learn more here: https://github.com/angular-ui/ui-router
+    // Set up the various states which the app can be in.
+    // Each state's controller can be found in controllers.js
+    $stateProvider
 
-  // setup an abstract state for the tabs directive
-    .state('tab', {
-    url: '/tab',
-    abstract: true,
-    templateUrl: 'templates/prehome.html'
-  })
+    // setup an abstract state for the tabs directive
+        .state('tab', {
+            url: '/tab',
+            abstract: true,
+            templateUrl: 'templates/prehome.html'
+        })
+        .state('homepage', {
+            url: '/homepage',
+            templateUrl: 'templates/home.html'
+        })
 
-  $urlRouterProvider.otherwise('/prehome');
-})
+        .state('profil', {
+            url: '/profil',
+            templateUrl: 'templates/profil.html'
+        })
+
+        .state('edit_profil', {
+            url: '/profil',
+            templateUrl: 'templates/profil.html'
+        })
+
+        .state('inscription', {
+            url: '/inscription',
+            templateUrl: 'templates/inscription.html'
+        })
+
+        .state('connexion', {
+            url: '/connexion',
+            templateUrl: 'templates/connexion.html'
+        })
+
+        .state('categ_produit', {
+            url: '/categ_produit',
+            templateUrl: 'templates/categ_produit.html'
+        })
+
+        .state('spec_produit', {
+            url: '/spec_produit',
+            templateUrl: 'templates/spec_produit.html'
+        })
+
+
+
+
+          $urlRouterProvider.otherwise('/homepage')
+});
