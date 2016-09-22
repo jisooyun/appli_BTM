@@ -1,6 +1,6 @@
 <ion-view view-title="pre_home">
 
-    <ion-content scroll="false" >
+    <ion-content scroll="false" ng-controller="gmailAuth">
       <!-- ng-controller="UserController" -->
 
         <section class="page_prehome">
@@ -11,7 +11,13 @@
 
             <a ui-sref="login"> déjà un compte ? </a>
             <button ui-sref="register" > Inscription </button>
-            <button class="btn_connexionfb" ng-click="auth.$authWithOAuthPopup('facebook');showPopup()">Connexion Facebook</button>
+            <!-- <button class="btn_connexionfb" ng-click="auth.$authWithOAuthPopup('facebook');showPopup()">Connexion gmail</button> -->
+
+            <form ng-submit="gmailAoth()">
+                <button class="btn_register button button-small button-assertive" type="submit">
+                    Connexion gmail
+                </button>
+            </form>
 
         </section>
 
