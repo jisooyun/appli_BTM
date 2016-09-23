@@ -60,7 +60,7 @@ angular.module('starter.controllers', [])
     });
   }
 })
-    .controller('listCtrl', function($scope) {
+    .controller('listCtrl', function($scope, $state) {
 
         var products = firebase.database().ref('products');
         products.on('value', function(snapshot) {
@@ -71,7 +71,10 @@ angular.module('starter.controllers', [])
         $scope.show = function () {
            console.log($scope.i.id);
         }
-
+        $scope.selectProduct = function(id){
+          //console.log($scope.singleProduct);
+          $state.go('spec_produit', {productData: id});
+        }
     })
 
     .controller('OneCtrl', function($scope) {
@@ -81,9 +84,12 @@ angular.module('starter.controllers', [])
             $scope.products = snapshot.val();
             console.log($scope.products)
         });
-
     })
-
+    .controller('specCtrl', function($scope, $stateParams) {
+      $scope.singleProduct = $stateParams.productData;
+      if($scope.singleProduct.price === undefined) $scope.singleProduct.price = 15.99;
+      console.log($scope.singleProduct);
+    })
     .controller('addCtrl', function ($scope, $state) {
         $scope.add = function (e) {
             // Get a key for a new product.
@@ -95,6 +101,7 @@ angular.module('starter.controllers', [])
                 id: newPostKey,
                 categorie: e.categorie,
                 desc: e.desc,
+                price: e.price,
                 src: e.src
             };
 

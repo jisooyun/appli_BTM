@@ -1,25 +1,25 @@
 <ion-header-bar>
-	<a class="button button-icon" href="#" ui-sref="homepage">
+	<a class="button button-icon" ui-sref="list_produits">
     	<i class="icon ion-android-arrow-back"></i>
   	</a>
-	<div class="h1 title">Album</div>
+	<div class="h1 title">{{ singleProduct.categorie }}</div>
 </ion-header-bar>
 <ion-content>
 	<div class="list card">
 	  	<div class="item">
-		    <h2>Pretty Hate Machine</h2>
-		    <p>Betraying the Martyrs</p>
+		    <h2>{{ singleProduct.name }}</h2>
 	  	</div>
 
 	  	<div class="item item-image">
-	    	<img src="../img/album_phantom_cover.jpg">
+	    	<img src="{{ singleProduct.src }}">
 	  	</div>
 
 	  	<div class="item">
-	  		<h4><strong>12.99 <i class="icon ion-social-euro"></i></strong></h4>
-	  		<h3>Genres : Metal</h3>
+	  		{{ singleProduct.desc }}
+	  		<h4><strong>{{ singleProduct.price }} <i class="icon ion-social-euro"></i></strong></h4>
+	  		<!--<h3>Genres : Metal</h3>-->
 	  	</div>
-	  	<div class="list">
+	  	<!--<div class="list">
 		  	<div class="item item-divider">
 		    	Morceaux
 		  	</div>
@@ -51,6 +51,6 @@
 		    	<i class="icon ion-play positive"></i>
 		    	What's Left of You
 		  	</a>
-		</div>
+		</div>-->
 	</div>
 </ion-content>

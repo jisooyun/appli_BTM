@@ -84,7 +84,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ui.router', 'firebas
 
         .state('spec_produit', {
             url: '/spec_produit',
-            templateUrl: 'templates/spec_produit.html'
+            templateUrl: 'templates/spec_produit.html',
+            controller: 'specCtrl',
+            params: {
+              productData: null
+            }
         })
         .state('register', {
           url: "/register",

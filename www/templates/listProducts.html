@@ -1,8 +1,10 @@
 <div class="list">
-    <a ng-repeat="product in products" class="item item-thumbnail-left"  id="{{ product.id }})" ng-click="show()" ng-model="id">
+    <a ng-repeat="product in products" class="item item-thumbnail-left" ng-click="selectProduct(product)">
+    <!--<a ng-repeat="product in products" class="item item-thumbnail-left"  id="{{ product.id }})" ng-click="show()" ng-model="id">-->
         <img src="{{ product.src }}">
         <h2>{{ product.name }}</h2>
         <p>{{ product.desc}}</p>
+        <p>{{ product.price}}</p>
 
     </a>
 </div>
