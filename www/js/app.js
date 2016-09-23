@@ -67,13 +67,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ui.router', 'firebas
 
         .state('categorie', {
             url: '/categorie',
-            templateUrl: 'templates/categorie.html'
+            templateUrl: 'templates/categorie.html',
+            controller: 'categorieCtrl'
         })
 
         .state('list_produits', {
             url: '/produits_list',
             templateUrl: 'templates/listProducts.html',
-            controller: 'listCtrl'
+            controller: 'listCtrl',
+            params: {
+              productCategorie: ''
+            }
         })
 
         .state('ajouter_produits', {
