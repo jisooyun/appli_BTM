@@ -83,7 +83,7 @@ angular.module('starter.controllers', [])
           $state.go('spec_produit', {productData: id});
         }
 
-      
+
     })
     .controller('categorieCtrl', function($scope, $state) {
       $scope.selectCategorie = function(name){
@@ -93,12 +93,15 @@ angular.module('starter.controllers', [])
 
     .controller('signOut', function($scope, $state){
         var user = firebase.auth().currentUser;
-        var name, email, photoUrl, uid;
-
+        var name, email, photoUrl, uid, displayName;
+        console.log()
         if (user != null) {
             $scope.name = user.displayName;
             $scope.email = user.email;
-            $scope.uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+            $scope.uid = user.uid;
+            $scope.localisation = user.displayName;
+
+            console.log($scope.localisation) // The user's ID, unique to the Firebase project. Do NOT use
             // this value to authenticate with your backend server, if
             // you have one. Use User.getToken() instead.
         }
@@ -162,9 +165,19 @@ angular.module('starter.controllers', [])
                 var user = firebase.auth().currentUser;
                 var pseudo, mail, mdp;
 
+                if (user != null) {
+                    $scope.name = user.displayName;
+                    $scope.email = user.email;
+                    $scope.mdp = user.password;
+                    $scope.uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+                    // this value to authenticate with your backend server, if
+                    // you have one. Use User.getToken() instead.
+                }
+
                     pseudo = this.pseudo;
                     mail = this.mail;
                     mdp = this.mdp;
+                    localisation = this.localisation;
                                      // The user's ID, unique to the Firebase project. Do NOT use
                                      // this value to authenticate with your backend server, if
                                      // you have one. Use User.getToken() instead.
@@ -184,6 +197,15 @@ angular.module('starter.controllers', [])
                 }, function(error) {
                     console.log(error)
                 });
+                user.updateProfile({
+                    pseudo : pseudo,
+                    displayName: localisation
+                  }).then(function() {
+                    // Update successful.
+                    console.log(localisation)
+                  }, function(error) {
+                    // An error happened.
+                  });
 
             }
         }
