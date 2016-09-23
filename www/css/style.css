@@ -67,7 +67,6 @@
     overflow: auto;
 }
 
-<<<<<<< HEAD
 /*NAV*/
 
 .bar.bar-dark{
@@ -82,15 +81,25 @@
   margin-top: 2%;
 }
 
-.icon_menu{
-  margin-right:7%;
-  margin-left:7%;
-
-=======
-
+.icon_menu {
+  margin-right: 7%;
+  margin-left: 7%;
+}
 
 
 /*HOME */
+
+
+.home{
+    background-color: #333333;
+}
+
+.article{
+    color: white;
+    font-size: 14px;
+    text-align: justify;
+    padding: 3%;
+}
 
 .row{
     padding:0;
@@ -101,7 +110,24 @@
 
 .exclus{
     height : 40%;
+
 }
+
+.exclus h2{
+   color: white;
+}
+
+.text_exclus{
+    font-family: 'Raleway', sans-serif;
+
+    color:white;
+}
+
+.more{
+    color:  #990100;
+}
+
+
 
 /* SUPPORT */
 .support {
@@ -111,8 +137,7 @@
 }
 
 .support h1 {
-    padding-top: 10%;
-    color: white;
-    font-family: 'Raleway', sans-serif;
->>>>>>> c17d0a0b2332279304712b4b906dc6fd38109050
+  padding-top: 10%;
+  color: white;
+  font-family: 'Raleway', sans-serif;
 }
