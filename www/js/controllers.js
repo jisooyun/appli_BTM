@@ -78,6 +78,8 @@ angular.module('starter.controllers', [])
           //console.log($scope.singleProduct);
           $state.go('spec_produit', {productData: id});
         }
+
+      
     })
 
     .controller('OneCtrl', function($scope) {
