@@ -1,1 +1,27 @@
 /* Empty. Add your own CSS if you like */
+/*Pre home*/
+.page_prehome{
+  background-color: black;
+  height: 100%;
+}
+.logo_app{
+  margin-top: 20%;
+  margin-left: 17%;
+  margin-right: auto;
+}
+.connection{
+  display: inline-block;
+  width: 100%;
+  margin-top: 2px;
+  background-color: #b50E0E !important
+}
+.button_prehome{
+  margin-top: 60%;
+}
+.deja_compte{
+  margin-top: 30%;
+}
+/*.compte_co{
+  background-color: black;
+  color: white !important;
+}*/

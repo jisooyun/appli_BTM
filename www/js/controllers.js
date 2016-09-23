@@ -15,7 +15,7 @@ angular.module('starter.controllers', [])
           // ...
           });
           console.log("Pas d'eurreur GG t'es Inscrit ma gueule ;-)");
-          // $state.go("homepage");
+          $state.go("homepage");
       }
   }
 )
@@ -33,7 +33,7 @@ angular.module('starter.controllers', [])
           // ...
           });
           console.log("Pas d'eurreur GG t'es CONNECTER ma gueule ;-)");
-          // $state.go("homepage");
+          $state.go("homepage");
       }
   }
 )
@@ -46,6 +46,7 @@ angular.module('starter.controllers', [])
       var token = result.credential.accessToken;
       // The signed-in user info.
       var user = result.user;
+      $state.go("homepage");
       // ...
     }).catch(function(error) {
       // Handle Errors here.
