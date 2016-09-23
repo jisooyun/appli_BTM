@@ -66,3 +66,23 @@
 .list-header{
     overflow: auto;
 }
+
+/*NAV*/
+
+.bar.bar-dark{
+  background-color: #333333;
+  height: 60px;
+}
+
+.button-bar{
+  float: none;
+  display: inline-block;
+  text-align: center;
+  margin-top: 2%;
+}
+
+.icon_menu{
+  margin-right:7%;
+  margin-left:7%;
+
+}
