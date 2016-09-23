@@ -53,7 +53,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ui.router', 'firebas
 
         .state('edit_profil', {
             url: '/edit_profil',
-            templateUrl: 'templates/edit_profil.html'
+            templateUrl: 'templates/edit_profil.html',
+            controller: 'UpdateUserCtrl'
         })
 
         .state('inscription', {
