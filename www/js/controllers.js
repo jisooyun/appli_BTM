@@ -59,16 +59,22 @@ angular.module('starter.controllers', [])
     });
   }
 })
-    .controller('listCtrl', function($scope) {
+    .controller('listCtrl', function($scope, $state) {
 
         var products = firebase.database().ref('products');
         products.once('value', function(snapshot) {
             $scope.products = snapshot.val();
             console.log($scope.products)
         });
-
+        $scope.selectProduct = function(id){
+          //console.log($scope.singleProduct);
+          $state.go('spec_produit', {obj: id});
+        }
     })
-
+    .controller('specCtrl', function($scope, $stateParams) {
+      $scope.singleProduct = $stateParams.obj;
+      console.log($scope.singleProduct);
+    })
     .controller('addCtrl', function ($scope, $state) {
         $scope.add = function (e) {
             // A product entry.
