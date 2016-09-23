@@ -36,7 +36,7 @@
 
 .deja{
   text-decoration: none;
-  color:white;
+  color:black;
   margin-top: 30% !important;
 }
 
@@ -70,6 +70,10 @@
     overflow: auto;
 }
 
+
+.bar .title.title-left {
+    text-align: center;
+}
 /*NAV*/
 
 .bar.bar-dark{
@@ -143,4 +147,5 @@
   padding-top: 10%;
   color: white;
   font-family: 'Raleway', sans-serif;
+
 }

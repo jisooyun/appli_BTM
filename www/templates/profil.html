@@ -1,16 +1,24 @@
-<section class="page_prehome">
+<ion-header-bar>
+    <a class="button button-icon" ui-sref="homepage">
+        <i class="icon ion-android-arrow-back white"></i>
+    </a>
+    <div class="h1 title">Profil</div>
+</ion-header-bar>
 
 <ion-content>
 
 <h2 style="text-align: center; margin-top:5%; color: white; font-family: 'Raleway', sans-serif;"> Votre profil </h2><br>
 
-<div class="list padding" style="color: white; font-size: 1.3em; font-family: 'Raleway', sans-serif;">
+<div class="list padding" style="color: black; font-size: 1.3em; font-family: 'Raleway', sans-serif;">
 
-    Prénom Nom: {{name}}<br><br>
+    <!-- Prénom Nom: {{name}}<br><br> -->
 
-    Email : {{email}}<br>
+    Email : {{email}}<br><br />
+
+    Localisation : {{localisation}}<br />
 
 </div>
+
 
 
 
@@ -21,7 +29,7 @@
 
     <br><br>
 
-    <a ui-sref="support" class="deja"> Besoin d'un support ? </a>
+    <a ui-sref="support" class="deja text-center"> Besoin d'un support ? </a>
 
 
 
