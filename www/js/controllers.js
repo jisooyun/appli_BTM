@@ -63,17 +63,21 @@ angular.module('starter.controllers', [])
     });
   }
 })
-    .controller('listCtrl', function($scope, $state) {
-
+    .controller('listCtrl', function($scope, $state, $stateParams) {
+      $scope.selectedCategorie = $stateParams.productCategorie;
+      $scope.categorie = "a";
         var products = firebase.database().ref('products');
         products.on('value', function(snapshot) {
-            $scope.products = snapshot.val();
-            console.log($scope.products)
+            //$scope.products = snapshot.val();
+            //console.log($scope.products);
+            var productArray = Object.keys(snapshot.val()).map(function (key) { return snapshot.val()[key]; });
+            console.log(productArray);
+            $scope.products = productArray;
         });
 
         $scope.show = function () {
            console.log($scope.i.id);
-        }
+        };
         $scope.selectProduct = function(id){
           //console.log($scope.singleProduct);
           $state.go('spec_produit', {productData: id});
@@ -81,9 +85,36 @@ angular.module('starter.controllers', [])
 
       
     })
+    .controller('categorieCtrl', function($scope, $state) {
+      $scope.selectCategorie = function(name){
+        $state.go('list_produits', {productCategorie: name});
+      }
+    })
 
+    .controller('signOut', function($scope, $state){
+        var user = firebase.auth().currentUser;
+        var name, email, photoUrl, uid;
+
+        if (user != null) {
+            $scope.name = user.displayName;
+            $scope.email = user.email;
+            $scope.uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+            // this value to authenticate with your backend server, if
+            // you have one. Use User.getToken() instead.
+        }
+
+        $scope.signOut = function() {
+            console.log(1)
+            firebase.auth().signOut().then(function() {
+                // Sign-out successful.
+                console.log("ça marche poto, t'es bien déco");
+                $state.go("pre_home");
+            }, function(error) {
+                // An error happened.
+            });
+        }
+    })
     .controller('OneCtrl', function($scope) {
-
         var products = firebase.database().ref('products');
         products.on('value', function(snapshot) {
             $scope.products = snapshot.val();
@@ -118,4 +149,43 @@ angular.module('starter.controllers', [])
 
             return firebase.database().ref().update(updates);
         };
-    });
+    })
+
+
+    .controller("UpdateUserCtrl",
+        function($scope, $state) {
+            var user = firebase.auth().currentUser;
+            var name, email, photoUrl, uid;
+
+
+            $scope.update = function () {
+                var user = firebase.auth().currentUser;
+                var pseudo, mail, mdp;
+
+                    pseudo = this.pseudo;
+                    mail = this.mail;
+                    mdp = this.mdp;
+                                     // The user's ID, unique to the Firebase project. Do NOT use
+                                     // this value to authenticate with your backend server, if
+                                     // you have one. Use User.getToken() instead.
+
+
+
+                user.updateEmail(mail).then(function(){
+                    //GG
+                    console.log('GG')
+                },function(error){
+                    console.log(error)
+                });
+
+                user.updatePassword(mdp).then(function() {
+                    console.log('Brvo')
+                    $state.go('profil');
+                }, function(error) {
+                    console.log(error)
+                });
+
+            }
+        }
+
+    );

@@ -1,33 +1,60 @@
 /* Empty. Add your own CSS if you like */
+
+@import url("https://fonts.googleapis.com/css?family=Raleway:900");
+
 .white{
 	color: white;
 }
+
 /*Pre home*/
 .page_prehome{
-  background-color: black;
+  background-color: #333333;
   height: 100%;
+  text-align:center;
 }
 .logo_app{
   margin-top: 20%;
-  margin-left: 17%;
-  margin-right: auto;
 }
-.connection{
+.connexion{
   display: inline-block;
   width: 100%;
-  margin-top: 2px;
-  background-color: #b50E0E !important
+  margin-top: 1px;
+  background-color: #990100 !important;
+  height: 50px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 13px;
 }
+
 .button_prehome{
-  margin-top: 60%;
+  margin-top: 55%;
+  height:100px !important;
+  margin-bottom:4%;
 }
+
+.deja{
+  text-decoration: none;
+  color:white;
+  margin-top: 30% !important;
+}
+
+
 .deja_compte{
-  margin-top: 30%;
+  margin-top: 40%;
+}
+
+.inscription{
+  margin-top:30%;
 }
 /*.compte_co{
   background-color: black;
   color: white !important;
 }*/
+
+
+.inscrit {
+  margin-top: -6%;
+}
+
 .bar-header {
     background-color:#333333 !important;
 
@@ -38,4 +65,20 @@
 
 .list-header{
     overflow: auto;
+}
+
+
+
+
+/*HOME */
+
+.row{
+    padding:0;
+}
+.dates{
+    height: 40%;
+}
+
+.exclus{
+    height : 40%;
 }

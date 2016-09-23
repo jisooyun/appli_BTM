@@ -1,42 +1,52 @@
-<html>
 
-<body>
-
-<ion-view title="Categorie">
+<ion-view view-title="categorie">
+ <ion-header-bar>
+    <div class="h1 title">Catégories</div>
+    <a class="button button-icon" ui-sref="list_produits">
+        <i class="icon ion-android-cart white"></i>
+    </a>
+</ion-header-bar>
+<ion-content [scrollbar-y ="false"]>
 
 <div class="list">
 
-    <a class="item item-thumbnail-left" href="#">
+    <a class="item item-thumbnail-left" ng-click="selectCategorie('')">
+        <img src="cover.jpg">
+        <h2>Toute la boutique</h2>
+        <p></p>
+    </a>
+
+    <a class="item item-thumbnail-left" ng-click="selectCategorie('tshirt')">
         <img src="cover.jpg">
         <h2>T-shirt</h2>
         <p></p>
     </a>
 
-    <a class="item item-thumbnail-left" href="#">
+    <a class="item item-thumbnail-left" ng-click="selectCategorie('short')">
         <img src="cover.jpg">
         <h2>Short</h2>
         <p></p>
     </a>
 
-    <a class="item item-thumbnail-left" href="listProducts.html">
+    <a class="item item-thumbnail-left" ng-click="selectCategorie('casquette')">
         <img src="cover.jpg">
         <h2>casquette</h2>
         <p></p>
     </a>
 
-    <a class="item item-thumbnail-left" href="#">
+    <a class="item item-thumbnail-left" ng-click="selectCategorie('pull')">
         <img src="cover.jpg">
         <h2>pull</h2>
         <p></p>
     </a>
 
-    <a class="item item-thumbnail-left" href="#">
+    <a class="item item-thumbnail-left" ng-click="selectCategorie('debardeur')">
         <img src="cover.jpg">
         <h2>débardeurs</h2>
         <p></p>
     </a>
 
-    <a class="item item-thumbnail-left" href="#">
+    <a class="item item-thumbnail-left" ng-click="selectCategorie('album')">
         <img src="cover.jpg">
         <h2>Album</h2>
         <p></p>
@@ -45,9 +55,6 @@
 
 </div>
 
-
+ </ion-content>
 </ion-view>
 
-</body>
-
-</html>
