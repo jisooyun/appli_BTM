@@ -1,11 +1,11 @@
 /* Empty. Add your own CSS if you like */
-<<<<<<< HEAD
+
 @import url("https://fonts.googleapis.com/css?family=Raleway:900");
-=======
+
 .white{
 	color: white;
 }
->>>>>>> 2e0de66886ca8cb6290f572f041ef1a6b465fa7f
+
 /*Pre home*/
 .page_prehome{
   background-color: #333333;
@@ -51,8 +51,9 @@
 }*/
 
 
-.inscrit{
+.inscrit {
   margin-top: -6%;
+}
 
 .bar-header {
     background-color:#333333 !important;
