@@ -102,5 +102,5 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ui.router', 'firebas
 
 
 
-          $urlRouterProvider.otherwise('/homepage')
+          $urlRouterProvider.otherwise('/pre_home')
 });
