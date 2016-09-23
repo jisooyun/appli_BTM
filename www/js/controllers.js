@@ -83,7 +83,17 @@ angular.module('starter.controllers', [])
     })
 
     .controller('signOut', function($scope, $state){
-        console.log(1)
+        var user = firebase.auth().currentUser;
+        var name, email, photoUrl, uid;
+
+        if (user != null) {
+            $scope.name = user.displayName;
+            $scope.email = user.email;
+            $scope.uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+            // this value to authenticate with your backend server, if
+            // you have one. Use User.getToken() instead.
+        }
+
         $scope.signOut = function() {
             console.log(1)
             firebase.auth().signOut().then(function() {
@@ -140,14 +150,6 @@ angular.module('starter.controllers', [])
             var user = firebase.auth().currentUser;
             var name, email, photoUrl, uid;
 
-            if (user != null) {
-                $scope.name = user.displayName;
-                $scope.email = user.email;
-                $scope.photoUrl = user.photoURL;
-                $scope.uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
-                                 // this value to authenticate with your backend server, if
-                                 // you have one. Use User.getToken() instead.
-            }
 
             $scope.update = function () {
                 var user = firebase.auth().currentUser;
