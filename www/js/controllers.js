@@ -118,4 +118,51 @@ angular.module('starter.controllers', [])
 
             return firebase.database().ref().update(updates);
         };
-    });
+    })
+
+
+    .controller("UpdateUserCtrl",
+        function($scope, $state) {
+            var user = firebase.auth().currentUser;
+            var name, email, photoUrl, uid;
+
+            if (user != null) {
+                $scope.name = user.displayName;
+                $scope.email = user.email;
+                $scope.photoUrl = user.photoURL;
+                $scope.uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+                                 // this value to authenticate with your backend server, if
+                                 // you have one. Use User.getToken() instead.
+            }
+
+            $scope.update = function () {
+                var user = firebase.auth().currentUser;
+                var pseudo, mail, mdp;
+
+                    pseudo = this.pseudo;
+                    mail = this.mail;
+                    mdp = this.mdp;
+                                     // The user's ID, unique to the Firebase project. Do NOT use
+                                     // this value to authenticate with your backend server, if
+                                     // you have one. Use User.getToken() instead.
+
+
+
+                user.updateEmail(mail).then(function(){
+                    //GG
+                    console.log('GG')
+                },function(error){
+                    console.log(error)
+                });
+
+                user.updatePassword(mdp).then(function() {
+                    console.log('Brvo')
+                    $state.go('profil');
+                }, function(error) {
+                    console.log(error)
+                });
+
+            }
+        }
+
+    );
