@@ -85,7 +85,7 @@ angular.module('starter.controllers', [])
         });
     })
     .controller('specCtrl', function($scope, $stateParams) {
-      $scope.singleProduct = $stateParams.obj;
+      $scope.singleProduct = $stateParams.productData;
       console.log($scope.singleProduct);
     })
     .controller('addCtrl', function ($scope, $state) {

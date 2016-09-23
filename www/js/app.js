@@ -87,7 +87,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ui.router', 'firebas
             templateUrl: 'templates/spec_produit.html',
             controller: 'specCtrl',
             params: {
-              obj: null
+              productData: null
             }
         })
         .state('register', {
