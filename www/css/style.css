@@ -67,6 +67,7 @@
     overflow: auto;
 }
 
+<<<<<<< HEAD
 /*NAV*/
 
 .bar.bar-dark{
@@ -85,4 +86,33 @@
   margin-right:7%;
   margin-left:7%;
 
+=======
+
+
+
+/*HOME */
+
+.row{
+    padding:0;
+}
+.dates{
+    height: 40%;
+}
+
+.exclus{
+    height : 40%;
+}
+
+/* SUPPORT */
+.support {
+    height: 100%;
+    background-color: #333333;
+    color: white;
+}
+
+.support h1 {
+    padding-top: 10%;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+>>>>>>> c17d0a0b2332279304712b4b906dc6fd38109050
 }
