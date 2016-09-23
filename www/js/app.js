@@ -47,7 +47,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ui.router', 'firebas
 
         .state('profil', {
             url: '/profil',
-            templateUrl: 'templates/profil.html'
+            templateUrl: 'templates/profil.html',
+            controller: 'signOut'
         })
 
         .state('edit_profil', {

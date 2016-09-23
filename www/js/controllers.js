@@ -70,10 +70,24 @@ angular.module('starter.controllers', [])
 
         $scope.show = function () {
            console.log($scope.i.id);
-        }
+        };
         $scope.selectProduct = function(id){
           //console.log($scope.singleProduct);
           $state.go('spec_produit', {productData: id});
+        }
+    })
+
+    .controller('signOut', function($scope, $state){
+        console.log(1)
+        $scope.signOut = function() {
+            console.log(1)
+            firebase.auth().signOut().then(function() {
+                // Sign-out successful.
+                console.log("ça marche poto, t'es bien déco");
+                $state.go("pre_home");
+            }, function(error) {
+                // An error happened.
+            });
         }
     })
 
