@@ -125,6 +125,9 @@ angular.module('starter.controllers', [])
       console.log($scope.singleProduct);
       if($scope.singleProduct.price === undefined) $scope.singleProduct.price = 15.99;
       console.log($scope.singleProduct);
+      $scope.addToCart = function(product){
+        //$state.go('list_produits', {productCategorie: product});
+      }
     })
     .controller('addCtrl', function ($scope, $state) {
         $scope.add = function (e) {

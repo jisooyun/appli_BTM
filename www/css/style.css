@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:900");
 
 .white{
+	z-index: 100 !important;
 	color: white;
 }
 .back-button{

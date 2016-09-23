@@ -1,17 +1,17 @@
 <ion-header-bar>
-	<a class="button button-icon" ui-sref="list_produits">
+	<ion-nav-bar>
+	  <ion-nav-back-button class="button-clear">
+	    <i class="ion-arrow-left-c white"></i> Back
+	  </ion-nav-back-button>
+	</ion-nav-bar>
+	<!--<a class="button button-icon" ui-sref="list_produits">
     	<i class="icon ion-android-arrow-back white"></i>
-  	</a>
-	<div class="h1 title">{{ singleProduct.categorie }}</div>
-	<a class="button button-icon" ui-sref="panier">
+  	</a>-->
+	<div class="h1 title white">{{ singleProduct.categorie }}</div>
+	<a class="button button-icon white" ui-sref="panier">
     	<i class="icon ion-android-cart white"></i>
   	</a>
 </ion-header-bar>
-<ion-nav-bar>
-  <ion-nav-back-button class="button-clear">
-    <i class="ion-arrow-left-c white"></i> Back
-  </ion-nav-back-button>
-</ion-nav-bar>
 <ion-content>
 	<div class="list card">
 	  	<div class="item">
@@ -21,7 +21,9 @@
 	  	<div class="item item-image">
 	    	<img src="{{ singleProduct.src }}">
 	  	</div>
-
+	  	<button class="button button-clear button-balanced" ng-click="addToCart(singleProduct)">Ajoutez au panier 
+	  		<i class="icon ion-android-cart"></i>
+	  	</button>
 	  	<div class="item singleProduct">
 	  		{{ singleProduct.desc }}
 	  		<h4><strong>{{ singleProduct.price }} <i class="icon ion-social-euro"></i></strong></h4>
