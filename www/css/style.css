@@ -1,6 +1,6 @@
 /* Empty. Add your own CSS if you like */
-.singleProduct{
-	margin-bottom: 1em !important; 
+.white{
+	color: white;
 }
 /*Pre home*/
 .page_prehome{
@@ -28,3 +28,14 @@
   background-color: black;
   color: white !important;
 }*/
+.bar-header {
+    background-color:#333333 !important;
+
+}
+.title{
+    color:white;
+}
+
+.list-header{
+    overflow: auto;
+}
