@@ -70,7 +70,10 @@ angular.module('starter.controllers', [])
         $scope.show = function () {
            console.log($scope.i.id);
         }
-
+        $scope.selectProduct = function(id){
+          //console.log($scope.singleProduct);
+          $state.go('spec_produit', {obj: id});
+        }
     })
 
     .controller('OneCtrl', function($scope) {
@@ -80,10 +83,6 @@ angular.module('starter.controllers', [])
             $scope.products = snapshot.val();
             console.log($scope.products)
         });
-        $scope.selectProduct = function(id){
-          //console.log($scope.singleProduct);
-          $state.go('spec_produit', {obj: id});
-        }
     })
     .controller('specCtrl', function($scope, $stateParams) {
       $scope.singleProduct = $stateParams.obj;
