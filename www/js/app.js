@@ -57,6 +57,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ui.router', 'firebas
             controller: 'UpdateUserCtrl'
         })
 
+        .state('support', {
+            url: '/support',
+            templateUrl: 'templates/support.html'
+        })
+
         .state('inscription', {
             url: '/inscription',
             templateUrl: 'templates/inscription.html'
