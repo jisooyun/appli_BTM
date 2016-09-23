@@ -47,7 +47,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ui.router', 'firebas
 
         .state('profil', {
             url: '/profil',
-            templateUrl: 'templates/profil.html'
+            templateUrl: 'templates/profil.html',
+            controller: 'signOut'
         })
 
         .state('edit_profil', {
@@ -98,9 +99,26 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ui.router', 'firebas
           url: "/login",
           templateUrl : 'templates/login.html'
         })
+        .state('panier',{
+            url: "/panier",
+            templateUrl : 'templates/panier.html'
+        })
 
 
 
-
+      //   $urlRouterProvider.rule(function ($injector, $location){
+      //
+      //   })
+      //   firebase.auth().onAuthStateChanged(function(user) {
+      //     if (1==2) {
+      // // User is signed in.
+      //       $urlRouterProvider('/homepage');
+      //       console.log(1);
+      //   } else {
+      // // No user is signed in.
+      // console.log(2)
+      //     $urlRouterProvider.otherwise('/pre_home');
+      //   }
+      //   });
           $urlRouterProvider.otherwise('/pre_home')
 });

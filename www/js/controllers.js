@@ -37,7 +37,7 @@ angular.module('starter.controllers', [])
       }
   }
 )
-.controller('gmailAuth', function($scope){
+.controller('gmailAuth', function($scope, $state){
   var provider = new firebase.auth.GoogleAuthProvider();
   provider.addScope('https://www.googleapis.com/auth/plus.login');
   $scope.gmailAoth = function(){
@@ -45,8 +45,11 @@ angular.module('starter.controllers', [])
       // This gives you a Google Access Token. You can use it to access the Google API.
       var token = result.credential.accessToken;
       // The signed-in user info.
+
       var user = result.user;
+
       $state.go("homepage");
+      console.log(1);
       // ...
     }).catch(function(error) {
       // Handle Errors here.
@@ -70,10 +73,26 @@ angular.module('starter.controllers', [])
 
         $scope.show = function () {
            console.log($scope.i.id);
-        }
+        };
         $scope.selectProduct = function(id){
           //console.log($scope.singleProduct);
           $state.go('spec_produit', {productData: id});
+        }
+
+      
+    })
+
+    .controller('signOut', function($scope, $state){
+        console.log(1)
+        $scope.signOut = function() {
+            console.log(1)
+            firebase.auth().signOut().then(function() {
+                // Sign-out successful.
+                console.log("ça marche poto, t'es bien déco");
+                $state.go("pre_home");
+            }, function(error) {
+                // An error happened.
+            });
         }
     })
 
