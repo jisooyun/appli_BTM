@@ -1,27 +1,27 @@
 <ion-content>
 
-    <h2 style="text-align: center; margin-top: 5%;">Editer ton profil</h2>
+
+
+    <h2 style="text-align: center; margin-top: 5%; font-family: 'Raleway', sans-serif;">Editer ton profil</h2>
+
+    <form ng-submit="update()">
 
         <div class="list padding">
 
             <label class="item item-input item-stacked-label">
-                <span class="input-label">First Name</span>
-                <input type="text" placeholder="Your name">
+                <span class="input-label">Name</span>
+                <input type="text" ng-model="name" >
             </label>
 
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Last Name</span>
-                <input type="text" placeholder="Your lastname">
-            </label>
 
             <label class="item item-input item-stacked-label">
                 <span class="input-label">Email</span>
-                <input type="text" placeholder="Your email">
+                <input type="text" ng-model="mail" >
             </label>
 
             <label class="item item-input item-stacked-label">
-                <span class="input-label">Phone</span>
-                <input type="text" placeholder="Your phone number">
+                <span class="input-label">Mot de passe</span>
+                <input type="password" ng-model="mdp" >
             </label>
 
             <label class="item item-input item-stacked-label">
@@ -34,14 +34,12 @@
             </label>
         </div>
 
-  
+        <div class="padding">
 
-    <div class="padding">
+            <button class="button btn_register button button-big button-assertive connexion" type="submit"> SAUVEGARDER </button>
 
-        <button class="button button-balanced">
-            Sauvegarder
-        </button>
+        </div>
 
-    </div>
+    </form>
 
 </ion-content>
