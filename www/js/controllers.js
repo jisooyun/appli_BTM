@@ -79,7 +79,6 @@ angular.module('starter.controllers', [])
            console.log($scope.i.id);
         };
         $scope.selectProduct = function(id){
-          //console.log($scope.singleProduct);
           $state.go('spec_produit', {productData: id});
         }
 
@@ -126,8 +125,12 @@ angular.module('starter.controllers', [])
     })
     .controller('specCtrl', function($scope, $stateParams) {
       $scope.singleProduct = $stateParams.productData;
+      console.log($scope.singleProduct);
       if($scope.singleProduct.price === undefined) $scope.singleProduct.price = 15.99;
       console.log($scope.singleProduct);
+      $scope.addToCart = function(product){
+        //$state.go('list_produits', {productCategorie: product});
+      }
     })
     .controller('addCtrl', function ($scope, $state) {
         $scope.add = function (e) {
