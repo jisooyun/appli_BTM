@@ -1,4 +1,4 @@
-<<<<<<< Updated upstream
+
 /* Empty. Add your own CSS if you like */
 .singleProduct{
 	margin-bottom: 1em !important; 
@@ -39,4 +39,20 @@
 
 .list-header{
     overflow: auto;
+}
+
+
+
+
+/*HOME */
+
+.row{
+    padding:0;
+}
+.dates{
+    height: 40%;
+}
+
+.exclus{
+    height : 40%;
 }
