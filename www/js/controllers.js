@@ -86,6 +86,7 @@ angular.module('starter.controllers', [])
     })
     .controller('specCtrl', function($scope, $stateParams) {
       $scope.singleProduct = $stateParams.productData;
+      if($scope.singleProduct.price === undefined) $scope.singleProduct.price = 15.99;
       console.log($scope.singleProduct);
     })
     .controller('addCtrl', function ($scope, $state) {
