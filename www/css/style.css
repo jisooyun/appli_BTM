@@ -5,7 +5,9 @@
 .white{
 	color: white;
 }
-
+.back-button{
+	display: block !important;
+}
 /*Pre home*/
 .page_prehome{
   background-color: #333333;
