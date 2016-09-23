@@ -1,6 +1,10 @@
-<ion-header-bar>
-	<div class="h1 title">Boutique</div>
+<ion-header-bar align-title="left">
+    <ion-nav-back-button class="button-icon icon  ion-ios7-arrow-back">
+    Back
+    </ion-nav-back-button>
+    <h1 class="title">Boutique</h1>
 </ion-header-bar>
+
 <ion-content>
 	<div class="list">
 	    <a ng-repeat="product in products" class="item item-thumbnail-left" ng-click="selectProduct(product)">

@@ -39,3 +39,7 @@
 .list-header{
     overflow: auto;
 }
+
+.bar .title.title-left {
+    text-align: center;
+}
