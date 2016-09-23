@@ -63,12 +63,16 @@ angular.module('starter.controllers', [])
     });
   }
 })
-    .controller('listCtrl', function($scope, $state) {
-
+    .controller('listCtrl', function($scope, $state, $stateParams) {
+      $scope.selectedCategorie = $stateParams.productCategorie;
+      $scope.categorie = "a";
         var products = firebase.database().ref('products');
         products.on('value', function(snapshot) {
-            $scope.products = snapshot.val();
-            console.log($scope.products)
+            //$scope.products = snapshot.val();
+            //console.log($scope.products);
+            var productArray = Object.keys(snapshot.val()).map(function (key) { return snapshot.val()[key]; });
+            console.log(productArray);
+            $scope.products = productArray;
         });
 
         $scope.show = function () {
@@ -80,6 +84,11 @@ angular.module('starter.controllers', [])
         }
 
       
+    })
+    .controller('categorieCtrl', function($scope, $state) {
+      $scope.selectCategorie = function(name){
+        $state.go('list_produits', {productCategorie: name});
+      }
     })
 
     .controller('signOut', function($scope, $state){
@@ -105,9 +114,7 @@ angular.module('starter.controllers', [])
             });
         }
     })
-
     .controller('OneCtrl', function($scope) {
-
         var products = firebase.database().ref('products');
         products.on('value', function(snapshot) {
             $scope.products = snapshot.val();
