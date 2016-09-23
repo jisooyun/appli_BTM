@@ -72,7 +72,7 @@ angular.module('starter.controllers', [])
         }
         $scope.selectProduct = function(id){
           //console.log($scope.singleProduct);
-          $state.go('spec_produit', {obj: id});
+          $state.go('spec_produit', {productData: id});
         }
     })
 
