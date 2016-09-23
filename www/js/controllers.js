@@ -63,17 +63,21 @@ angular.module('starter.controllers', [])
     });
   }
 })
-    .controller('listCtrl', function($scope, $state) {
-
+    .controller('listCtrl', function($scope, $state, $stateParams) {
+      $scope.selectedCategorie = $stateParams.productCategorie;
+      $scope.categorie = "a";
         var products = firebase.database().ref('products');
         products.on('value', function(snapshot) {
-            $scope.products = snapshot.val();
-            console.log($scope.products)
+            //$scope.products = snapshot.val();
+            //console.log($scope.products);
+            var productArray = Object.keys(snapshot.val()).map(function (key) { return snapshot.val()[key]; });
+            console.log(productArray);
+            $scope.products = productArray;
         });
 
         $scope.show = function () {
            console.log($scope.i.id);
-        }
+        };
         $scope.selectProduct = function(id){
           //console.log($scope.singleProduct);
           $state.go('spec_produit', {productData: id});
@@ -81,9 +85,26 @@ angular.module('starter.controllers', [])
 
       
     })
+    .controller('categorieCtrl', function($scope, $state) {
+      $scope.selectCategorie = function(name){
+        $state.go('list_produits', {productCategorie: name});
+      }
+    })
 
+    .controller('signOut', function($scope, $state){
+        console.log(1)
+        $scope.signOut = function() {
+            console.log(1)
+            firebase.auth().signOut().then(function() {
+                // Sign-out successful.
+                console.log("ça marche poto, t'es bien déco");
+                $state.go("pre_home");
+            }, function(error) {
+                // An error happened.
+            });
+        }
+    })
     .controller('OneCtrl', function($scope) {
-
         var products = firebase.database().ref('products');
         products.on('value', function(snapshot) {
             $scope.products = snapshot.val();

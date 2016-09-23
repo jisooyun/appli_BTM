@@ -47,7 +47,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ui.router', 'firebas
 
         .state('profil', {
             url: '/profil',
-            templateUrl: 'templates/profil.html'
+            templateUrl: 'templates/profil.html',
+            controller: 'signOut'
         })
 
         .state('edit_profil', {
@@ -67,13 +68,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ui.router', 'firebas
 
         .state('categorie', {
             url: '/categorie',
-            templateUrl: 'templates/categorie.html'
+            templateUrl: 'templates/categorie.html',
+            controller: 'categorieCtrl'
         })
 
         .state('list_produits', {
             url: '/produits_list',
             templateUrl: 'templates/listProducts.html',
-            controller: 'listCtrl'
+            controller: 'listCtrl',
+            params: {
+              productCategorie: ''
+            }
         })
 
         .state('ajouter_produits', {
@@ -97,6 +102,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ui.router', 'firebas
         .state('login',{
           url: "/login",
           templateUrl : 'templates/login.html'
+        })
+        .state('panier',{
+            url: "/panier",
+            templateUrl : 'templates/panier.html'
         })
 
 
