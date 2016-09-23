@@ -82,3 +82,16 @@
 .exclus{
     height : 40%;
 }
+
+/* SUPPORT */
+.support {
+    height: 100%;
+    background-color: #333333;
+    color: white;
+}
+
+.support h1 {
+    padding-top: 10%;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+}
