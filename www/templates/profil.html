@@ -1,18 +1,35 @@
+<<<<<<< HEAD
 
 
 <h2 style="text-align: center; margin-top:5%;"> Votre profil </h2>
+=======
+<section class="page_prehome">
+>>>>>>> 65c596d4e57a8a2b7b7646504016a504162d2007
 
-<div class="list padding">
+<ion-content>
 
-    Nom <br>
+<h2 style="text-align: center; margin-top:5%; color: white; font-family: 'Raleway', sans-serif;"> Votre profil </h2><br>
 
-    Prénom <br>
+<div class="list padding" style="color: white; font-size: 1.3em; font-family: 'Raleway', sans-serif;">
 
-    Email <br>
+    Prénom Nom: {{name}}<br><br>
+
+    Email : {{email}}<br>
 
 </div>
 
-<button class="button button-balanced" ui-sref="edit_profil"> éditer le profil </button>
 
 
-<button class="button button-assertive" ng-click="signOut()"> déconnexion </button>
+
+        <button class="button btn_register button button-big button-assertive connexion" ui-sref="edit_profil"> ÉDITER LE PROFIL </button>
+
+        <button class="button btn_register button button-big button-assertive connexion" ng-click="signOut()"> DÉCONNEXION </button>
+
+    <br><br>
+
+    <a ui-sref="support" class="deja"> Besoin d'un support ? </a>
+
+
+
+</ion-content>
+</section>
