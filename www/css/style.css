@@ -72,6 +72,18 @@
 
 /*HOME */
 
+
+.home{
+    background-color: #333333;
+}
+
+.article{
+    color: white;
+    font-size: 14px;
+    text-align: justify;
+    padding: 3%;
+}
+
 .row{
     padding:0;
 }
@@ -81,4 +93,19 @@
 
 .exclus{
     height : 40%;
+
+}
+
+.exclus h2{
+   color: white;
+}
+
+.text_exclus{
+    font-family: 'Raleway', sans-serif;
+
+    color:white;
+}
+
+.more{
+    color:  #990100;
 }
