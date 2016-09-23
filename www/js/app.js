@@ -98,6 +98,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ui.router', 'firebas
           url: "/login",
           templateUrl : 'templates/login.html'
         })
+        .state('panier',{
+            url: "/panier",
+            templateUrl : 'templates/panier.html'
+        })
 
 
 
