@@ -99,6 +99,7 @@ angular.module('starter.controllers', [])
                 id: newPostKey,
                 categorie: e.categorie,
                 desc: e.desc,
+                price: e.price,
                 src: e.src
             };
 
