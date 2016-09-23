@@ -123,12 +123,17 @@ angular.module('starter.controllers', [])
             console.log($scope.products)
         });
     })
-    .controller('specCtrl', function($scope, $stateParams) {
+    .controller('specCtrl', function($scope, $rootScope, $stateParams) {
+      if($rootScope.myCart === undefined || $rootScope.myCart === null){
+        $rootScope.myCart = [];
+      }
       $scope.singleProduct = $stateParams.productData;
       console.log($scope.singleProduct);
       if($scope.singleProduct.price === undefined) $scope.singleProduct.price = 15.99;
       console.log($scope.singleProduct);
       $scope.addToCart = function(product){
+        $rootScope.myCart.push(product);
+        console.log($rootScope.myCart);
         //$state.go('list_produits', {productCategorie: product});
       }
     })

@@ -7,20 +7,10 @@
 
 <ion-content>
     <div class="list">
-        <a class="item item-avatar">
-            <img src="venkman.jpg">
-            <h2>Venkman</h2>
-            <span class="badge badge-assertive">0</span>
-        </a>
-        <a class="item item-avatar">
-            <img src="venkman.jpg">
-            <h2>Venkman</h2>
-            <span class="badge badge-assertive">0</span>
-        </a>
-        <a class="item item-avatar">
-            <img src="venkman.jpg">
-            <h2>Venkman</h2>
-            <span class="badge badge-assertive">0</span>
+        <a class="item item-avatar" ng-repeat="product in myCart">
+            <img src="{{ product.src }}">
+            <h2>{{ product.name }}</h2>
+            <span class="badge badge-assertive">{{ product.price }}</span>
         </a>
     </div>
 
